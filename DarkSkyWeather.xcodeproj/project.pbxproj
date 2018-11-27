@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		747F711821ADA5F000E1BE73 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F711721ADA5EF00E1BE73 /* TableViewCell.swift */; };
 		749B724421ACE9470018C0EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B723F21ACE9470018C0EB /* AppDelegate.swift */; };
 		749B724521ACE9470018C0EB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B724021ACE9470018C0EB /* TableViewController.swift */; };
 		749B724621ACE9470018C0EB /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B724121ACE9470018C0EB /* WeatherModel.swift */; };
@@ -17,9 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		747F711721ADA5EF00E1BE73 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = /Users/admin/Desktop/DarkSkyWeather/TableViewCell.swift; sourceTree = "<absolute>"; };
 		749B722321AC81650018C0EB /* DarkSkyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkSkyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		749B723F21ACE9470018C0EB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = DarkSkyWeather/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		749B724021ACE9470018C0EB /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ViewController/TableViewController.swift; sourceTree = SOURCE_ROOT; };
+		749B724021ACE9470018C0EB /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = SOURCE_ROOT; };
 		749B724121ACE9470018C0EB /* WeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherModel.swift; path = DarkSkyWeather/WeatherModel.swift; sourceTree = SOURCE_ROOT; };
 		749B724221ACE9470018C0EB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = DarkSkyWeather/Info.plist; sourceTree = SOURCE_ROOT; };
 		749B724321ACE9470018C0EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = DarkSkyWeather/Assets.xcassets; sourceTree = SOURCE_ROOT; };
@@ -39,6 +41,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		747F711921ADA67900E1BE73 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				749B724021ACE9470018C0EB /* TableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		747F711A21ADA69600E1BE73 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				749B724121ACE9470018C0EB /* WeatherModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		747F711B21ADA6AE00E1BE73 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				749B724F21AD73610018C0EB /* NetworkManager.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		747F711C21ADA6C600E1BE73 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				747F711721ADA5EF00E1BE73 /* TableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		749B721A21AC81650018C0EB = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +92,12 @@
 		749B722521AC81650018C0EB /* DarkSkyWeather */ = {
 			isa = PBXGroup;
 			children = (
+				747F711C21ADA6C600E1BE73 /* View */,
+				747F711A21ADA69600E1BE73 /* Model */,
+				747F711921ADA67900E1BE73 /* Controller */,
+				747F711B21ADA6AE00E1BE73 /* Networking */,
 				749B724321ACE9470018C0EB /* Assets.xcassets */,
 				749B725121AD76CA0018C0EB /* Application */,
-				749B725421AD942F0018C0EB /* ViewController */,
-				749B725221AD76F10018C0EB /* Model */,
-				749B725321AD92320018C0EB /* Networking */,
 			);
 			name = DarkSkyWeather;
 			sourceTree = "<group>";
@@ -76,30 +111,6 @@
 				749B724B21ACF0960018C0EB /* Main.storyboard */,
 			);
 			name = Application;
-			sourceTree = "<group>";
-		};
-		749B725221AD76F10018C0EB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				749B724121ACE9470018C0EB /* WeatherModel.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		749B725321AD92320018C0EB /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				749B724F21AD73610018C0EB /* NetworkManager.swift */,
-			);
-			name = Networking;
-			sourceTree = "<group>";
-		};
-		749B725421AD942F0018C0EB /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				749B724021ACE9470018C0EB /* TableViewController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				747F711821ADA5F000E1BE73 /* TableViewCell.swift in Sources */,
 				749B724421ACE9470018C0EB /* AppDelegate.swift in Sources */,
 				749B724621ACE9470018C0EB /* WeatherModel.swift in Sources */,
 				749B725021AD73610018C0EB /* NetworkManager.swift in Sources */,

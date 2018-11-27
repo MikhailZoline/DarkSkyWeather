@@ -1,6 +1,6 @@
 //
 //  WeatherSummary.swift
-//  ZachChallenge
+//  DarkSkyWeather
 //
 //  Created by Mikhail Zoline on 11/26/18.
 //  Copyright © 2018 MZ. All rights reserved.
@@ -22,5 +22,6 @@ struct dailySummary: Codable{
     var  summary: String
     var  temperatureHigh: Double
     var  temperatureLow: Double
+    var  precipProbability: Double
     var  icon: String
 }

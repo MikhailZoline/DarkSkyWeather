@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/admin/Desktop/ZachChallenge/DarkSkyWeather.xcodeproj">
+      location = "group:/Users/admin/Desktop/DarkSkyWeather/TableViewCell.swift">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

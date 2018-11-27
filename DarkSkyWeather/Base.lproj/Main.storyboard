@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,19 +11,46 @@
         <!--Table View Controller-->
         <scene sceneID="pBN-8Y-oOG">
             <objects>
-                <tableViewController id="NcP-sI-KwO" customClass="TableViewController" customModule="ZachChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="NcP-sI-KwO" customClass="TableViewController" customModule="DarkSkyWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nVq-bR-gKd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myWeatherCell" id="bDW-Lf-pqO">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myWeatherCell" id="bDW-Lf-pqO" customClass="TableViewCell" customModule="DarkSkyWeather" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bDW-Lf-pqO" id="gnr-O6-zcb">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="11/22/18" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mP-eg-f6T">
+                                            <rect key="frame" x="8" y="0.0" width="367" height="20"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Rain starting in the evening and breezy overnight xxxxx" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYg-7L-Zm8" customClass="MultilineLabel" customModule="DarkSkyWeather" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="2.5" width="359" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="cYg-7L-Zm8" firstAttribute="top" secondItem="4mP-eg-f6T" secondAttribute="bottom" id="3d6-WU-vOw"/>
+                                        <constraint firstAttribute="trailing" secondItem="4mP-eg-f6T" secondAttribute="trailing" constant="8" id="FVy-en-Ktq"/>
+                                        <constraint firstItem="cYg-7L-Zm8" firstAttribute="trailing" secondItem="4mP-eg-f6T" secondAttribute="trailing" id="G59-zx-6wH"/>
+                                        <constraint firstAttribute="bottom" secondItem="cYg-7L-Zm8" secondAttribute="bottom" id="N56-GD-3KX"/>
+                                        <constraint firstItem="4mP-eg-f6T" firstAttribute="leading" secondItem="gnr-O6-zcb" secondAttribute="leading" constant="8" id="Rz4-jl-g0h"/>
+                                        <constraint firstItem="cYg-7L-Zm8" firstAttribute="leading" secondItem="4mP-eg-f6T" secondAttribute="leading" id="ed0-Z8-8le"/>
+                                        <constraint firstItem="4mP-eg-f6T" firstAttribute="top" secondItem="gnr-O6-zcb" secondAttribute="top" id="kzd-uf-QaF"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="4mP-eg-f6T" id="fay-uJ-1Hm"/>
+                                    <outlet property="summaryLabel" destination="cYg-7L-Zm8" id="L55-E7-HD7"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -32,10 +58,13 @@
                             <outlet property="delegate" destination="NcP-sI-KwO" id="Iq3-P3-meC"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="nVq-bR-gKd" id="llb-2W-uwz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sKf-8d-8W2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="404" y="122"/>
+            <point key="canvasLocation" x="404" y="121.88905547226388"/>
         </scene>
     </scenes>
 </document>
