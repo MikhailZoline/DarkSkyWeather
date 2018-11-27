@@ -42,6 +42,11 @@ class NetworkManager {
     static let stringURL: String = DarkSkyURL + "/" + DarkSkyAPIKey + "/" + DarkSkyLocation
     private var task: URLSessionTask?
     
+    private init(){
+
+    }
+    static let sharedInstance = NetworkManager()
+    
     func request(_ completion: @escaping NetworkRequestCompletion) {
         let session = URLSession.shared
         

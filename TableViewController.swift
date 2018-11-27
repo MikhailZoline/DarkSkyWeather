@@ -10,11 +10,12 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    var networkManager: NetworkManager = NetworkManager()
+    let networkManager: NetworkManager = NetworkManager.sharedInstance
     var weatherArray: [dailySummary] = [dailySummary]()
     var operationQueue: OperationQueue = OperationQueue()
     
     @IBOutlet var myTableView : UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
