@@ -7,24 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		749B722C21AC81660018C0EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 749B722A21AC81660018C0EB /* Main.storyboard */; };
-		749B723421AC81690018C0EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 749B723221AC81690018C0EB /* LaunchScreen.storyboard */; };
 		749B724421ACE9470018C0EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B723F21ACE9470018C0EB /* AppDelegate.swift */; };
 		749B724521ACE9470018C0EB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B724021ACE9470018C0EB /* TableViewController.swift */; };
 		749B724621ACE9470018C0EB /* WeatherSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B724121ACE9470018C0EB /* WeatherSummary.swift */; };
-		749B724721ACE9470018C0EB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 749B724221ACE9470018C0EB /* Info.plist */; };
 		749B724821ACE9470018C0EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 749B724321ACE9470018C0EB /* Assets.xcassets */; };
+		749B724D21ACF0960018C0EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 749B724921ACF0960018C0EB /* LaunchScreen.storyboard */; };
+		749B724E21ACF0960018C0EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 749B724B21ACF0960018C0EB /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		749B722321AC81650018C0EB /* DarkSkyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkSkyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		749B722B21AC81660018C0EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		749B723321AC81690018C0EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		749B723F21ACE9470018C0EB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = DarkSkyWeather/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		749B724021ACE9470018C0EB /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = DarkSkyWeather/TableViewController.swift; sourceTree = SOURCE_ROOT; };
 		749B724121ACE9470018C0EB /* WeatherSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherSummary.swift; path = DarkSkyWeather/WeatherSummary.swift; sourceTree = SOURCE_ROOT; };
 		749B724221ACE9470018C0EB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = DarkSkyWeather/Info.plist; sourceTree = SOURCE_ROOT; };
 		749B724321ACE9470018C0EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = DarkSkyWeather/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		749B724A21ACF0960018C0EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DarkSkyWeather/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		749B724C21ACF0960018C0EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DarkSkyWeather/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +61,8 @@
 				749B723F21ACE9470018C0EB /* AppDelegate.swift */,
 				749B724021ACE9470018C0EB /* TableViewController.swift */,
 				749B724121ACE9470018C0EB /* WeatherSummary.swift */,
-				749B722A21AC81660018C0EB /* Main.storyboard */,
-				749B723221AC81690018C0EB /* LaunchScreen.storyboard */,
+				749B724921ACF0960018C0EB /* LaunchScreen.storyboard */,
+				749B724B21ACF0960018C0EB /* Main.storyboard */,
 			);
 			name = DarkSkyWeather;
 			sourceTree = "<group>";
@@ -126,9 +125,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				749B724721ACE9470018C0EB /* Info.plist in Resources */,
-				749B723421AC81690018C0EB /* LaunchScreen.storyboard in Resources */,
-				749B722C21AC81660018C0EB /* Main.storyboard in Resources */,
+				749B724E21ACF0960018C0EB /* Main.storyboard in Resources */,
+				749B724D21ACF0960018C0EB /* LaunchScreen.storyboard in Resources */,
 				749B724821ACE9470018C0EB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,20 +147,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		749B722A21AC81660018C0EB /* Main.storyboard */ = {
+		749B724921ACF0960018C0EB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				749B722B21AC81660018C0EB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		749B723221AC81690018C0EB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				749B723321AC81690018C0EB /* Base */,
+				749B724A21ACF0960018C0EB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		749B724B21ACF0960018C0EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				749B724C21ACF0960018C0EB /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -296,7 +294,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = MZ.ZachChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = MZ.DarkSkyWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -315,7 +313,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = MZ.ZachChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = MZ.DarkSkyWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

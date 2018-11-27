@@ -1813,39 +1813,42 @@ let json = """
 
 class TableViewController: UITableViewController {
     
+    var myRequestJson: mainJson?
     
     @IBOutlet var myTableView : UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        do{
-            let weatherArray = try JSONDecoder().decode(mainJson.self, from: json)
-            print(weatherArray.daily.data.first.debugDescription)
-        }
-        catch {
-            print(error.localizedDescription)
-        }
+//        do {
+//            let weatherArray = try JSONDecoder().decode(mainJson.self, from: json)
+//            print(weatherArray.daily.data.first.debugDescription)
+//        }
+//        catch {
+//            print(error.localizedDescription)
+//        }
         
-         // Make a REST request to the API
-//         guard let url = URL(string: "https://api.darksky.net/forecast/59c6b6b7efd5c3fc0f617338cfae6c48/37.8267,-122.4233") else {
-//         fatalError("Failed to create URL with https://api.darksky.net/forecast/59c6b6b7efd5c3fc0f617338cfae6c48/37.8267,-122.4233")
-//         }
-//         var request = URLRequest(url: url)
-//         request.httpMethod = "GET"
-//         URLSession.shared.dataTask(with : request) {
-//         (data, response, error) in if error != nil {
-//         fatalError(
-//         "Failed Network Request at \(String(describing: request.url))")
-//         }else{
-//            OperationQueue.main.addOperation {
-//            do{
-//                self.myRequestDict = [try (JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any])!]
-//                 }catch{
-//                 fatalError("Failed to Initialize JSON object \(error)")
-//                 }
-//            }
-//         }
-//         }.resume()
-//        print(myRequestDict)
+         guard let url = URL(string: "https://api.darksky.net/forecast/59c6b6b7efd5c3fc0f617338cfae6c48/37.8267,-122.4233") else {
+         fatalError("Failed to create URL with https://api.darksky.net/forecast/59c6b6b7efd5c3fc0f617338cfae6c48/37.8267,-122.4233")
+         }
+         var request = URLRequest(url: url)
+         request.httpMethod = "GET"
+         URLSession.shared.dataTask(with : request) {
+         (data, response, error) in if error != nil {
+         fatalError(
+         "Failed Network Request at \(String(describing: request.url))")
+         }else{
+            OperationQueue.main.addOperation {
+            do{
+                self.myRequestJson = try JSONDecoder().decode(mainJson.self, from : data!)
+                 }catch{
+                 fatalError("Failed to Initialize JSON object \(error)")
+                 }
+                OperationQueue.main.addOperation {[weak self] in
+                    print(self!.myRequestJson!.daily.data.count)
+                }
+            }
+         }
+         }.resume()
+       
     }
 
     // MARK: - Table view data source
