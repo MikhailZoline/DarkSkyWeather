@@ -9,7 +9,7 @@
 import Foundation
 
 // The following fields are specified in JSON data from the DarkSky API
-struct mainJson: Codable{
+struct DarkSkyJsonResponse: Codable{
     var daily: dailyArray
 }
 
