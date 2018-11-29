@@ -67,7 +67,10 @@ class TableViewController: UITableViewController {
             cell.dateLabel?.text = self.dateFormatter.string(from: date)
         }
         if let summaryString: String = summary?.summary{
-            cell.summaryLabel.text = "\(summaryString) The hight is \(Int((summary?.temperatureHigh)!)) and the low is \(Int((summary?.temperatureLow)!)). There is a \(Int((summary?.precipProbability)! * 100))% of precipitation."
+            cell.summaryLabel.text = "\(summaryString) The high is forecast as \(Int((summary?.temperatureHigh)!)) and the low as \(Int((summary?.temperatureLow)!)). There is a \(Int((summary?.precipProbability)! * 100))% chance of rain."
+        }
+        if let iconString: String =  summary?.icon{
+            cell.iconImage.image = UIImage(named: iconString)
         }
     }
     

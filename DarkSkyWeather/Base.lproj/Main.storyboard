@@ -12,43 +12,68 @@
         <scene sceneID="pBN-8Y-oOG">
             <objects>
                 <tableViewController id="NcP-sI-KwO" customClass="TableViewController" customModule="DarkSkyWeather" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nVq-bR-gKd">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nVq-bR-gKd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myWeatherCell" id="bDW-Lf-pqO" customClass="TableViewCell" customModule="DarkSkyWeather" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myWeatherCell" rowHeight="500" id="bDW-Lf-pqO" customClass="TableViewCell" customModule="DarkSkyWeather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="500"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bDW-Lf-pqO" id="gnr-O6-zcb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="499.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="11/22/18" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mP-eg-f6T">
-                                            <rect key="frame" x="8" y="0.0" width="367" height="20"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfB-2h-lbc">
+                                            <rect key="frame" x="0.0" y="210" width="80" height="80"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" image="ios11-weather-snow-icon" translatesAutoresizingMaskIntoConstraints="NO" id="nnL-Pk-IIb">
+                                                    <rect key="frame" x="8.5" y="8.5" width="63" height="63"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="63" id="vwA-20-Kqr" userLabel="height = 80"/>
+                                                        <constraint firstAttribute="width" constant="63" id="wex-gd-CMa"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="nnL-Pk-IIb" firstAttribute="centerY" secondItem="gfB-2h-lbc" secondAttribute="centerY" id="HUt-uy-IBO"/>
+                                                <constraint firstItem="nnL-Pk-IIb" firstAttribute="centerX" secondItem="gfB-2h-lbc" secondAttribute="centerX" id="Ztb-20-TlU"/>
+                                                <constraint firstAttribute="width" constant="80" id="jMV-9o-26g"/>
+                                                <constraint firstAttribute="height" constant="80" id="z20-Zi-VUF"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Rain starting in the evening and breezy overnight xxxxx" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYg-7L-Zm8">
+                                            <rect key="frame" x="80" y="26" width="295" height="473.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Rain starting in the evening and breezy overnight xxxxx" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYg-7L-Zm8" customClass="MultilineLabel" customModule="DarkSkyWeather" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="2.5" width="359" height="41"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11/22/18" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mP-eg-f6T">
+                                            <rect key="frame" x="80" y="2" width="295" height="24"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="cYg-7L-Zm8" firstAttribute="top" secondItem="4mP-eg-f6T" secondAttribute="bottom" id="3d6-WU-vOw"/>
-                                        <constraint firstAttribute="trailing" secondItem="4mP-eg-f6T" secondAttribute="trailing" constant="8" id="FVy-en-Ktq"/>
-                                        <constraint firstItem="cYg-7L-Zm8" firstAttribute="trailing" secondItem="4mP-eg-f6T" secondAttribute="trailing" id="G59-zx-6wH"/>
-                                        <constraint firstAttribute="bottom" secondItem="cYg-7L-Zm8" secondAttribute="bottom" id="N56-GD-3KX"/>
-                                        <constraint firstItem="4mP-eg-f6T" firstAttribute="leading" secondItem="gnr-O6-zcb" secondAttribute="leading" constant="8" id="Rz4-jl-g0h"/>
-                                        <constraint firstItem="cYg-7L-Zm8" firstAttribute="leading" secondItem="4mP-eg-f6T" secondAttribute="leading" id="ed0-Z8-8le"/>
-                                        <constraint firstItem="4mP-eg-f6T" firstAttribute="top" secondItem="gnr-O6-zcb" secondAttribute="top" id="kzd-uf-QaF"/>
+                                        <constraint firstAttribute="bottom" secondItem="cYg-7L-Zm8" secondAttribute="bottom" id="279-pX-EA4"/>
+                                        <constraint firstItem="cYg-7L-Zm8" firstAttribute="top" secondItem="4mP-eg-f6T" secondAttribute="bottom" id="2V7-gE-rBR"/>
+                                        <constraint firstItem="gfB-2h-lbc" firstAttribute="leading" secondItem="gnr-O6-zcb" secondAttribute="leading" id="CNX-FZ-cj9"/>
+                                        <constraint firstAttribute="trailing" secondItem="4mP-eg-f6T" secondAttribute="trailing" id="DQf-J4-zEG"/>
+                                        <constraint firstAttribute="trailing" secondItem="cYg-7L-Zm8" secondAttribute="trailing" id="FSB-eK-f5B"/>
+                                        <constraint firstItem="4mP-eg-f6T" firstAttribute="leading" secondItem="gfB-2h-lbc" secondAttribute="trailing" id="Hcq-9g-tpm"/>
+                                        <constraint firstItem="cYg-7L-Zm8" firstAttribute="leading" secondItem="gfB-2h-lbc" secondAttribute="trailing" id="i7K-d9-Dri"/>
+                                        <constraint firstItem="4mP-eg-f6T" firstAttribute="top" secondItem="gnr-O6-zcb" secondAttribute="top" constant="2" id="lYf-Sz-LVX"/>
+                                        <constraint firstItem="gfB-2h-lbc" firstAttribute="centerY" secondItem="gnr-O6-zcb" secondAttribute="centerY" id="omb-qA-cSp"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dateLabel" destination="4mP-eg-f6T" id="fay-uJ-1Hm"/>
+                                    <outlet property="iconImage" destination="nnL-Pk-IIb" id="XlB-T6-0ow"/>
                                     <outlet property="summaryLabel" destination="cYg-7L-Zm8" id="L55-E7-HD7"/>
                                 </connections>
                             </tableViewCell>
@@ -67,4 +92,7 @@
             <point key="canvasLocation" x="404" y="121.88905547226388"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ios11-weather-snow-icon" width="106" height="125"/>
+    </resources>
 </document>

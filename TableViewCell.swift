@@ -10,9 +10,11 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+    @IBOutlet var iconImage: UIImageView!
+    
     @IBOutlet var dateLabel: UILabel!
     
-    @IBOutlet var summaryLabel: MultilineLabel!
+    @IBOutlet var summaryLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,12 +27,4 @@ class TableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-}
-
-class MultilineLabel : UILabel {
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        preferredMaxLayoutWidth = bounds.width
-        super.layoutSubviews()
-    }
 }
