@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 enum NetworkResponse:String {
     case success
@@ -35,11 +36,27 @@ fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<St
 
 public typealias NetworkRequestCompletion = (_ data: Data?,_ response: URLResponse?,_ error: Error?)->()
 
+protocol NetworkMangerDelegate: class {
+    func networkLocationUpdated()
+}
+
 class NetworkManager {
     static let DarkSkyAPIKey: String = "59c6b6b7efd5c3fc0f617338cfae6c48"
     static let DarkSkyURL: String = "https://api.darksky.net/forecast"
-    static let DarkSkyLocation: String = "37.8267,-122.4233"
-    static let stringURL: String = DarkSkyURL + "/" + DarkSkyAPIKey + "/" + DarkSkyLocation
+    var Location: String = "37.8267,-122.4233"
+    
+    weak var ViewContollerDelegate: NetworkMangerDelegate?
+    
+    var darkSkyLocation: String {
+        get {
+            return Location
+        }
+        set{
+            Location  = newValue
+            self.ViewContollerDelegate!.networkLocationUpdated()
+        }
+    }
+    
     private var task: URLSessionTask?
     
     private init(){
@@ -48,10 +65,12 @@ class NetworkManager {
     static let sharedInstance = NetworkManager()
     
     func request(_ completion: @escaping NetworkRequestCompletion) {
+        
+        let stringURL: String = NetworkManager.DarkSkyURL + "/" + NetworkManager.DarkSkyAPIKey + "/" + darkSkyLocation
         let session = URLSession.shared
         
-        guard let url = URL(string: NetworkManager.stringURL) else{
-            fatalError("Failed to create URL with \(NetworkManager.stringURL)" )
+        guard let url = URL(string: stringURL) else{
+            fatalError("Failed to create URL with \(stringURL)" )
         }
         var request = URLRequest(url:url)
         request.httpMethod = "GET"
@@ -79,7 +98,9 @@ class NetworkManager {
 //                        print(responseData)
                         let responseJSON: DarkSkyJsonResponse = try JSONDecoder().decode(DarkSkyJsonResponse.self, from : responseData)
 //                        print(responseJSON.daily.data.debugDescription)
-                        completion(responseJSON.daily.data,nil)
+                        OperationQueue.main.addOperation({
+                            completion(responseJSON.daily.data,nil)
+                        })
                     }catch {
                         print("Failed to Initialize JSON object \(error)")
                         completion(nil, NetworkResponse.unableToDecode.rawValue)
