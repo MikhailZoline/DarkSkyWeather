@@ -136,7 +136,7 @@ extension dailySummary {
     func degToCompass( bearing : Double) ->String{
         let dirArr = ["N","NNE","NE","ENE","E","ESE", "SE", "SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"]
         let val = Int(bearing/22.5 + 0.5)
-        return dirArr[val]
+        return dirArr[val < 16 ? val : 0]
     }
 }
 
