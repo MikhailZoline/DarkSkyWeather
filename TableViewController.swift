@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class TableViewController: UITableViewController, NetworkMangerDelegate, LocationManagerDelegate  {
+class TableViewController: UITableViewController, LocationManagerDelegate  {
     
     let networkManager: NetworkManager = NetworkManager.sharedInstance
     var weatherArray: [dailySummary] = [dailySummary]()
@@ -19,7 +19,6 @@ class TableViewController: UITableViewController, NetworkMangerDelegate, Locatio
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        networkManager.ViewContollerDelegate  = self
         let locMan: LocationManager = LocationManager.sharedInstance
         locMan.ViewContollerDelegate = self
     }
@@ -29,7 +28,6 @@ class TableViewController: UITableViewController, NetworkMangerDelegate, Locatio
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 500
         self.tableView.tableFooterView = UIView()
-        LocationManager.sharedInstance.getCurrentLocation()
     }
     
     func titleLocationUpdated() {

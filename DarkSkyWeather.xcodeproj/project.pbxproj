@@ -60,6 +60,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		745527D621B5F3E3007C2215 /* LocationService */ = {
+			isa = PBXGroup;
+			children = (
+				745527D421B57EDF007C2215 /* LocationManager.swift */,
+			);
+			name = LocationService;
+			sourceTree = "<group>";
+		};
 		747F711921ADA67900E1BE73 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,12 +85,12 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		747F711B21ADA6AE00E1BE73 /* Networking */ = {
+		747F711B21ADA6AE00E1BE73 /* NetworkingService */ = {
 			isa = PBXGroup;
 			children = (
 				749B724F21AD73610018C0EB /* NetworkManager.swift */,
 			);
-			name = Networking;
+			name = NetworkingService;
 			sourceTree = "<group>";
 		};
 		747F711C21ADA6C600E1BE73 /* View */ = {
@@ -98,7 +106,6 @@
 		749B721A21AC81650018C0EB = {
 			isa = PBXGroup;
 			children = (
-				745527D421B57EDF007C2215 /* LocationManager.swift */,
 				749B722521AC81650018C0EB /* DarkSkyWeather */,
 				749B722421AC81650018C0EB /* Products */,
 				745527D121B4C450007C2215 /* Frameworks */,
@@ -119,7 +126,8 @@
 				747F711C21ADA6C600E1BE73 /* View */,
 				747F711A21ADA69600E1BE73 /* Model */,
 				747F711921ADA67900E1BE73 /* Controller */,
-				747F711B21ADA6AE00E1BE73 /* Networking */,
+				747F711B21ADA6AE00E1BE73 /* NetworkingService */,
+				745527D621B5F3E3007C2215 /* LocationService */,
 				749B724321ACE9470018C0EB /* Assets.xcassets */,
 				749B725121AD76CA0018C0EB /* Application */,
 			);

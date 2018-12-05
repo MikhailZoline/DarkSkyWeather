@@ -36,24 +36,17 @@ fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<St
 
 public typealias NetworkRequestCompletion = (_ data: Data?,_ response: URLResponse?,_ error: Error?)->()
 
-protocol NetworkMangerDelegate: class {
-    func networkLocationUpdated()
-}
-
 class NetworkManager {
     static let DarkSkyAPIKey: String = "59c6b6b7efd5c3fc0f617338cfae6c48"
     static let DarkSkyURL: String = "https://api.darksky.net/forecast"
     var Location: String = "37.8267,-122.4233"
-    
-    weak var ViewContollerDelegate: NetworkMangerDelegate?
-    
+
     var darkSkyLocation: String {
         get {
             return Location
         }
         set{
             Location  = newValue
-            self.ViewContollerDelegate!.networkLocationUpdated()
         }
     }
     
