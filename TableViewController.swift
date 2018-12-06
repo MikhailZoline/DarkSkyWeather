@@ -12,7 +12,8 @@ import CoreLocation
 class TableViewController: UITableViewController, LocationManagerDelegate  {
     
     let networkManager: NetworkManager = NetworkManager.sharedInstance
-    var weatherArray: [dailySummary] = [dailySummary]()
+    var weatherArray: [daily] = [daily]()
+    var currently: currently?
     var operationQueue: OperationQueue = OperationQueue()
    
     @IBOutlet var myTableView : UITableView!
@@ -39,11 +40,12 @@ class TableViewController: UITableViewController, LocationManagerDelegate  {
     func networkLocationUpdated() {
         operationQueue.qualityOfService = .userInteractive
         let operation = BlockOperation(block: {[weak self] in
-            self!.networkManager.getDailyWeather { (weatherArray,error) in
+            self!.networkManager.getDailyWeather { (currently, weatherArray,error) in
                 if ((error) != nil) {
                     fatalError("Failed to Initialize JSON object \(error!.description)")
                 }
                 OperationQueue.main.addOperation {[weak self] in
+                    self?.currently = currently
                     self?.weatherArray = weatherArray!
                     self?.tableView.reloadData()
                 }
@@ -78,7 +80,7 @@ class TableViewController: UITableViewController, LocationManagerDelegate  {
     }
  
     func configureCell(cell: TableViewCell, atIndexPath indexPath: IndexPath) {
-        let summary: dailySummary? = self.weatherArray[indexPath.row]
+        let summary: daily? = self.weatherArray[indexPath.row]
         
         if let time: Int = summary?.time {
             let date = Date(timeIntervalSince1970:TimeInterval(time))
@@ -107,7 +109,7 @@ class TableViewController: UITableViewController, LocationManagerDelegate  {
         // Pass the selected object to the new view controller.
         if(segue.identifier == "ShowDetailController"){
             let indexPath: IndexPath  = self.tableView.indexPathForSelectedRow!
-            let summary: dailySummary? = self.weatherArray[indexPath.row]
+            let summary: daily? = self.weatherArray[indexPath.row]
             
             // Pass the selected book to the new view controller.
             let detailViewController: DetailViewController = (segue.destination as? DetailViewController)!

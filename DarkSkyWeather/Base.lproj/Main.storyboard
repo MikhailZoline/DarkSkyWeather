@@ -18,25 +18,44 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myLocationCell" rowHeight="80" id="bDW-Lf-pqO" customClass="LocationViewCell" customModule="DarkSkyWeather" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myLocationCell" rowHeight="180" id="bDW-Lf-pqO" customClass="LocationViewCell" customModule="DarkSkyWeather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="180"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bDW-Lf-pqO" id="gnr-O6-zcb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="179.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vmn-h2-eGb">
+                                            <rect key="frame" x="20" y="56.5" width="140" height="103"/>
+                                            <subviews>
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KRc-cq-NhS">
+                                                    <rect key="frame" x="20" y="1.5" width="100" height="100"/>
+                                                </mapView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="103" id="C8A-cH-zXc"/>
+                                                <constraint firstAttribute="width" constant="140" id="FzV-9F-WaS"/>
+                                                <constraint firstAttribute="trailing" secondItem="KRc-cq-NhS" secondAttribute="trailing" constant="20" id="QF9-pL-NAe"/>
+                                                <constraint firstItem="KRc-cq-NhS" firstAttribute="leading" secondItem="Vmn-h2-eGb" secondAttribute="leading" constant="20" symbolic="YES" id="YC0-vi-6k2"/>
+                                                <constraint firstItem="KRc-cq-NhS" firstAttribute="centerX" secondItem="Vmn-h2-eGb" secondAttribute="centerX" id="fMJ-6h-8qu"/>
+                                                <constraint firstItem="KRc-cq-NhS" firstAttribute="centerY" secondItem="Vmn-h2-eGb" secondAttribute="centerY" id="i6a-Mk-ktt"/>
+                                                <constraint firstAttribute="bottom" secondItem="KRc-cq-NhS" secondAttribute="bottom" constant="1.5" id="jpQ-57-JWV"/>
+                                            </constraints>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="749" text="11/22/18" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mP-eg-f6T">
-                                            <rect key="frame" x="0.0" y="2" width="375" height="75.5"/>
+                                            <rect key="frame" x="20" y="2" width="99.5" height="46.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="4mP-eg-f6T" secondAttribute="trailing" id="DQf-J4-zEG"/>
-                                        <constraint firstItem="4mP-eg-f6T" firstAttribute="centerX" secondItem="gnr-O6-zcb" secondAttribute="centerX" id="YGo-mq-htR"/>
+                                        <constraint firstItem="Vmn-h2-eGb" firstAttribute="top" secondItem="4mP-eg-f6T" secondAttribute="bottom" constant="8" symbolic="YES" id="MFA-V8-vdq"/>
+                                        <constraint firstItem="4mP-eg-f6T" firstAttribute="leading" secondItem="Vmn-h2-eGb" secondAttribute="leading" id="Pyb-i0-2KF"/>
+                                        <constraint firstItem="Vmn-h2-eGb" firstAttribute="leading" secondItem="gnr-O6-zcb" secondAttribute="leading" constant="20" symbolic="YES" id="WWe-aF-xeT"/>
                                         <constraint firstItem="4mP-eg-f6T" firstAttribute="top" secondItem="gnr-O6-zcb" secondAttribute="top" constant="2" id="lYf-Sz-LVX"/>
-                                        <constraint firstAttribute="bottom" secondItem="4mP-eg-f6T" secondAttribute="bottom" constant="2" id="qLM-Qr-Bop"/>
+                                        <constraint firstAttribute="bottom" secondItem="Vmn-h2-eGb" secondAttribute="bottom" constant="20" symbolic="YES" id="nvA-YT-yQN"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -46,7 +65,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mySummaryCell" rowHeight="80" id="qIS-9K-J79" customClass="TableViewCell" customModule="DarkSkyWeather" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="108" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="208" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qIS-9K-J79" id="uRI-9i-VCB">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>

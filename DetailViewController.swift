@@ -32,7 +32,7 @@ class DetailViewController: UITableViewController {
         return nil
     }
     
-    var summary: dailySummary? = nil
+    var summary: daily? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()

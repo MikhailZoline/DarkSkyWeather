@@ -11,13 +11,14 @@ import Foundation
 // The following fields are specified in JSON data from the DarkSky API
 struct DarkSkyJsonResponse: Codable{
     var daily: dailyArray
+    var currently: currently
 }
 
 struct dailyArray: Codable{
-    var data: [dailySummary]
+    var data: [daily]
 }
 
-struct dailySummary: Codable {
+struct daily: Codable {
     var time: Int
     var summary: String
     var temperatureHigh: Double
@@ -58,7 +59,28 @@ struct dailySummary: Codable {
     }()
 }
 
-extension dailySummary {
+struct currently: Codable {
+    var time: Int                           
+    var summary: String
+    var icon: String
+    var nearestStormDistance: Double
+    var precipIntensity: Double
+    var precipProbability: Double
+    var temperature: Double
+    var apparentTemperature: Double
+    var dewPoint: Double
+    var humidity: Double
+    var pressure: Double
+    var windSpeed: Double
+    var windGust: Double
+    var windBearing: Double
+    var cloudCover: Double
+    var uvIndex: Double
+    var visibility: Double
+    var ozone: Double
+}
+
+extension daily {
     enum CodingKeys: String, CodingKey{
         case time = "time"
         case summary = "summary"
@@ -105,7 +127,7 @@ extension dailySummary {
             case let someInt as Int:
                 switch key {
                     case let timeKey where timeKey == "sunriseTime" || timeKey == "sunsetTime":
-                        return (dailySummary.hourFormatter?.string(from:  Date(timeIntervalSince1970:TimeInterval(someInt))))!
+                        return (daily.hourFormatter?.string(from:  Date(timeIntervalSince1970:TimeInterval(someInt))))!
                     default:
                         return (String(someInt))
             }
