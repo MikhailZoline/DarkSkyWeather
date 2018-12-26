@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewCellDate: UITableViewCell {
+class DayDetailCellDate: UITableViewCell {
     
 @IBOutlet var dateLabel: UILabel!
 @IBOutlet var summaryLabel: UILabel!
@@ -25,7 +25,7 @@ class DetailViewCellDate: UITableViewCell {
     }
 
 }
-class DetailViewCell: UITableViewCell {
+class DayDetailCell: UITableViewCell {
     
     @IBOutlet var firstColumnNameLabel: UILabel!
     @IBOutlet var firstColumnValueLabel: UILabel!
