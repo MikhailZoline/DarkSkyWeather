@@ -1,16 +1,22 @@
 //
-//  LocationViewCell.swift
+//  MainHeaderCell.swift
 //  DarkSkyWeather
 //
-//  Created by Mikhail Zoline on 12/2/18.
+//  Created by Mikhail Zoline on 12/18/18.
 //  Copyright © 2018 MZ. All rights reserved.
 //
 
 import UIKit
+import MapKit
 
-class LocationViewCell: UITableViewCell {
+class MainHeaderCell: UITableViewCell {
     
-@IBOutlet var locationLabel: UILabel!
+    @IBOutlet var locationLabel: UILabel!
+    @IBOutlet var summaryLabel: UILabel!
+    @IBOutlet var mapView: MKMapView!
+    @IBOutlet var temperatureLabel: UILabel!
+    @IBOutlet var windLabel: UILabel!
+    @IBOutlet var humidityLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,5 +28,5 @@ class LocationViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

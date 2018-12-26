@@ -74,17 +74,17 @@ class NetworkManager {
         self.task?.resume()
     }
     
-    func getDailyWeather(completion: @escaping (_ weatherSummary: [dailySummary]?,_ error: String?)->()){
+    func getDailyWeather(completion: @escaping (_ currently: currently? ,_ weatherSummary: [daily]?,_ error: String?)->()){
         self.request { ( data, response, error) in
             if error != nil {
-                completion(nil, "Please check your network connection.")
+                completion(nil, nil, "Please check your network connection.")
             }
              if let response = response as? HTTPURLResponse {
                 let result = handleNetworkResponse(response)
                 switch result {
                 case .success:
                     guard let responseData = data else {
-                        completion(nil, NetworkResponse.noData.rawValue)
+                        completion(nil, nil, NetworkResponse.noData.rawValue)
                         return
                     }
                     do {
@@ -92,14 +92,14 @@ class NetworkManager {
                         let responseJSON: DarkSkyJsonResponse = try JSONDecoder().decode(DarkSkyJsonResponse.self, from : responseData)
 //                        print(responseJSON.daily.data.debugDescription)
                         OperationQueue.main.addOperation({
-                            completion(responseJSON.daily.data,nil)
+                            completion( responseJSON.currently, responseJSON.daily.data,nil)
                         })
                     }catch {
                         print("Failed to Initialize JSON object \(error)")
-                        completion(nil, NetworkResponse.unableToDecode.rawValue)
+                        completion(nil, nil, NetworkResponse.unableToDecode.rawValue)
                     }
                 case .failure(let networkFailureError):
-                    completion(nil, networkFailureError)
+                    completion(nil, nil, networkFailureError)
                 }
             }
         }
