@@ -1,10 +1,26 @@
-# DarkSkyWeather
-An example of consumption of the DarkSky.net API, the most accurate source of local weather information.
+  
+<h1 align="center">
+<b>DarkSkyWeather</b><br>
+  <br>
+   <img width="275" height="500" src="https://user-images.githubusercontent.com/16679908/50728547-778ad880-10f9-11e9-8dfb-dadc3165def9.gif">
+</h1>
 
-The map view with current location and detailed conditions of the hour 
-is displayed in the header section of the main view.
+## An example of consumption of the DarkSky.net API, the most accurate source of local weather information.
 
-The forecast for the week with summary for each day is displayed in the main table view. 
-The detail view is displaying the details for the choosen day.
+The backend request is done with NSURLSession.
+The JSON serialization is done by conforming the Data Model to the Decodable Protocol.
+All tasks are done through NsOperationQueue 
 
-https://github.com/MikhailZoline/DarkSkyWeather/blob/master/DarkSkyWeather.gif
+The master view is a list of forecasts for the week with a summary for each day. The master has a header section with the current position and detailed conditions of the hour.
+
+Selecting a day navigates to the detail view for that day.
+The detail view displays fields as: 
+- Sunrise and Sunset; 
+- Precipitation Probability and Humidity;
+- Speed and Wind Gust;
+- Visibility and  Pressure;
+
+The user can navigate back to the main list by touching the "Back" button in the navigation bar.
+
+
+
