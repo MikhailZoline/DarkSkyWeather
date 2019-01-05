@@ -1,7 +1,6 @@
-  
+
 <h1 align="center">
-<b>DarkSkyWeather</b><br>
-  <br>
+<b>DarkSkyWeather</b>
    <img width="275" height="500" src="https://user-images.githubusercontent.com/16679908/50728547-778ad880-10f9-11e9-8dfb-dadc3165def9.gif">
 </h1>
 
