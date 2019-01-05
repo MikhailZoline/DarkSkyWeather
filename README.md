@@ -1,6 +1,6 @@
 
 <h1 align="center">
-<b>DarkSkyWeather</b><br>
+<b>DarkSkyWeather</b>
    <br><img width="275" height="500" src="https://user-images.githubusercontent.com/16679908/50728547-778ad880-10f9-11e9-8dfb-dadc3165def9.gif">
 </h1>
 
@@ -8,7 +8,7 @@
 
 The backend request is done with NSURLSession.
 The JSON serialization is done by conforming the Data Model to the Decodable Protocol.
-All tasks are done through NsOperationQueue 
+All tasks are run through NsOperationQueue
 
 The master view is a list of forecasts for the week with a summary for each day. The master has a header section with the current position and detailed conditions of the hour.
 
